@@ -6,28 +6,28 @@
 
 #container {
 
-    display: inline-block;
-    border: 5px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    width: 800px;
-    height: 800px;
-    border: 1px black solid; 
 }
 
 #grid {
     display: grid;
-    grid-template-columns: repeat(16, 50px);
-    grid-template-rows: repeat(16, 50px);
-    grid-gap: 5px;
+    height: 560px;
+    width: 560px;
+    grid-template-columns: repeat(16, 35px);
+    grid-template-rows: repeat(16, 35px);
+    border: 1px solid black;
     
 }
 
-div {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  font-family: Arial;
-  font-size: 3rem;
-  font-weight: bold;
-  
+.cell {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid black;
+}
+
+.cell:hover {
+    background-color: aqua;
 }
