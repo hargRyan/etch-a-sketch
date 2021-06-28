@@ -7,19 +7,17 @@ function createGrid() {
     
         let div = document.createElement('div');
         div.classList.add("cell");
-        addEventListener('mouseover', setBGcolor(div));
+        div.addEventListener('mouseover', function() {
+          setBGcolor(div);
+        });
         grid.appendChild(div);
         
     }
 }
 
 function setBGcolor (node) {
-    // should set the background color of a given node to a random color.
-    // want this function to run within the for loop.
 
-    let backGround = node.style.backgroundColor = 'black';
-
-    
+    node.style.backgroundColor = 'black';    
 }
 
 //STATEMENTS GO HERE
