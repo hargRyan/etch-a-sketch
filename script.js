@@ -29,6 +29,37 @@ function resetBGcolor () {
     });
 }
 
+function newGrid() { //works as intended for the moment.
+let gridWidth;
+let gridLength;
+
+    while (!(Number.isFinite(gridWidth) &&  gridWidth <= 100 && gridWidth > 0)) {
+
+        gridWidth = prompt("Please enter a grid width between 1 to 100.", "10");
+        gridWidth = Number(gridWidth);
+
+        if (!(Number.isFinite(gridWidth) &&  gridWidth <= 100 && gridWidth > 0)) {
+            alert("There was something wrong with your entry.");
+        }
+    }
+
+    while (!(Number.isFinite(gridLength) &&  gridLength <= 100 && gridLength > 0)) {
+
+        gridLength = prompt("Please enter a grid length between 1 to 100.", "10");
+        gridLength = Number(gridLength);
+
+        if (!(Number.isFinite(gridLength) &&  gridLength <= 100 && gridLength > 0)) {
+            alert("There was something wrong with your entry.");
+        }
+    }
+
+
+}
+
+function buttonFunction () {
+    resetBGcolor();
+    newGrid();
+}
 //STATEMENTS GO HERE
 
 createGrid();
