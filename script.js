@@ -47,10 +47,21 @@ let gridSize;
 
         if (!(Number.isFinite(gridSize) &&  gridSize <= 100 && gridSize > 0)) {
             alert("There was something wrong with your entry.");
+        } else if (gridSize === null) {
+            return;
         }
     }
 
+    deleteGrid();
     createGrid(gridSize);
+}
+
+function deleteGrid () {
+
+    let grid = document.getElementById('grid');
+    while (grid.firstChild) {
+        grid.removeChild(grid.lastChild);
+    }
 }
 
 function buttonFunction () {
