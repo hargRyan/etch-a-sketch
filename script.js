@@ -1,51 +1,50 @@
 //GLOBAL VARIABLES AND FUNCTIONS GO HERE
-
 const grid = document.getElementById('grid');
 
 function createGrid(gridSize) {
-    
+
     setGridSize(gridSize);
 
-    for(let i=0; i < gridSize*gridSize; i++) {
-    
+    for (let i = 0; i < gridSize * gridSize; i++) {
+
         let div = document.createElement('div');
         div.classList.add("cell");
         div.addEventListener('mouseover', function() {
-          setBGcolor(div);
+            setBGcolor(div);
         });
         grid.appendChild(div);
-        
+
     }
 }
 
-function setGridSize (number) {
+function setGridSize(number) {
     grid.style.gridTemplateColumns = `repeat(${number}, 1fr)`;
     grid.style.gridTemplateRows = `repeat(${number}, 1fr)`;
 }
 
-function setBGcolor (node) {
+function setBGcolor(node) {
 
-    node.style.backgroundColor = 'black';    
+    node.style.backgroundColor = 'black';
 }
 
-function resetBGcolor () {
+function resetBGcolor() {
     let cells = document.querySelectorAll("div.cell");
 
-    cells.forEach(function (cell) {
+    cells.forEach(function(cell) {
         cell.style.backgroundColor = "white";
     });
 }
 
 function newGrid() {
 
-let gridSize;
+    let gridSize;
 
-    while (!(Number.isFinite(gridSize) &&  gridSize <= 100 && gridSize > 0)) {
+    while (!(Number.isFinite(gridSize) && gridSize <= 100 && gridSize > 0)) {
 
         gridSize = prompt("Please enter a grid size between 1 to 100.", "10");
         gridSize = Number(gridSize);
 
-        if (!(Number.isFinite(gridSize) &&  gridSize <= 100 && gridSize > 0)) {
+        if (!(Number.isFinite(gridSize) && gridSize <= 100 && gridSize > 0)) {
             alert("There was something wrong with your entry.");
         } else if (gridSize === null) {
             return;
@@ -56,7 +55,7 @@ let gridSize;
     createGrid(gridSize);
 }
 
-function deleteGrid () {
+function deleteGrid() {
 
     let grid = document.getElementById('grid');
     while (grid.firstChild) {
@@ -64,7 +63,7 @@ function deleteGrid () {
     }
 }
 
-function buttonFunction () {
+function buttonFunction() {
     resetBGcolor();
 }
 //STATEMENTS GO HERE
