@@ -1,5 +1,5 @@
 //GLOBAL VARIABLES AND FUNCTIONS GO HERE
-
+let width = 10; length = 10;
 
 function createGrid() {
     const grid = document.getElementById('grid');
@@ -16,6 +16,22 @@ function createGrid() {
     }
 }
 
+function createGrid2() {
+
+    const grid = document.getElementById('grid');
+    grid.setAttribute = `grid-template-columns: repeat(${length}, 1fr)`;
+    grid.setAttribute = `grid-template-rows: repeat(${width}, 1fr)`;
+
+    for (let i=0 ; i<length*width ; i++) {
+
+        let div = document.createElement('div');
+        div.classList.add('cell');
+        grid.appendChild(div);
+    }
+    
+
+}
+
 function setBGcolor (node) {
 
     node.style.backgroundColor = 'black';    
@@ -30,6 +46,7 @@ function resetBGcolor () {
 }
 
 function newGrid() { //works as intended for the moment.
+
 let gridWidth;
 let gridLength;
 
@@ -62,4 +79,5 @@ function buttonFunction () {
 }
 //STATEMENTS GO HERE
 
-createGrid();
+//createGrid();
+createGrid2();
