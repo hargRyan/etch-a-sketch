@@ -35,7 +35,7 @@ function resetBGcolor() {
     });
 }
 
-function newGrid() {
+function changeGridSize() {
 
     let gridSize;
 
@@ -63,9 +63,6 @@ function deleteGrid() {
     }
 }
 
-function buttonFunction() {
-    resetBGcolor();
-}
 //STATEMENTS GO HERE
 
 createGrid(10);
