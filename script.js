@@ -1,12 +1,12 @@
 //GLOBAL VARIABLES AND FUNCTIONS GO HERE
-let width = 10; length = 10;
 
 const grid = document.getElementById('grid');
 
-function createGrid() {
+function createGrid(gridSize) {
     
+    setGridSize(gridSize);
 
-    for(let i=0; i < length; i++) {
+    for(let i=0; i < gridSize*gridSize; i++) {
     
         let div = document.createElement('div');
         div.classList.add("cell");
@@ -18,20 +18,9 @@ function createGrid() {
     }
 }
 
-function setGridSize () {
-    grid.style.gridTemplateColumns = `repeat(${length}, 1fr)`;
-}
-
-function createGrid2() {
-
-    for (let i=0 ; i< length**2 ; i++) {
-
-        let div = document.createElement('div');
-        div.classList.add('cell');
-        grid.appendChild(div);
-    }
-    
-
+function setGridSize (number) {
+    grid.style.gridTemplateColumns = `repeat(${number}, 1fr)`;
+    grid.style.gridTemplateRows = `repeat(${number}, 1fr)`;
 }
 
 function setBGcolor (node) {
@@ -47,25 +36,26 @@ function resetBGcolor () {
     });
 }
 
-function newGrid() { //works as intended for the moment.
+function newGrid() {
 
-let gridWidth;
+let gridSize;
 
-    while (!(Number.isFinite(gridWidth) &&  gridWidth <= 100 && gridWidth > 0)) {
+    while (!(Number.isFinite(gridSize) &&  gridSize <= 100 && gridSize > 0)) {
 
-        gridWidth = prompt("Please enter a grid width between 1 to 100.", "10");
-        gridWidth = Number(gridWidth);
+        gridSize = prompt("Please enter a grid size between 1 to 100.", "10");
+        gridSize = Number(gridSize);
 
-        if (!(Number.isFinite(gridWidth) &&  gridWidth <= 100 && gridWidth > 0)) {
+        if (!(Number.isFinite(gridSize) &&  gridSize <= 100 && gridSize > 0)) {
             alert("There was something wrong with your entry.");
         }
     }
+
+    createGrid(gridSize);
 }
 
 function buttonFunction () {
     resetBGcolor();
-    newGrid();
 }
 //STATEMENTS GO HERE
 
-createGrid();
+createGrid(10);
