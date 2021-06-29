@@ -1,10 +1,12 @@
 //GLOBAL VARIABLES AND FUNCTIONS GO HERE
 let width = 10; length = 10;
 
-function createGrid() {
-    const grid = document.getElementById('grid');
+const grid = document.getElementById('grid');
 
-    for(let i=0; i <= 255; i++) {
+function createGrid() {
+    
+
+    for(let i=0; i < length; i++) {
     
         let div = document.createElement('div');
         div.classList.add("cell");
@@ -16,13 +18,13 @@ function createGrid() {
     }
 }
 
+function setGridSize () {
+    grid.style.gridTemplateColumns = `repeat(${length}, 1fr)`;
+}
+
 function createGrid2() {
 
-    const grid = document.getElementById('grid');
-    grid.setAttribute = `grid-template-columns: repeat(${length}, 1fr)`;
-    grid.setAttribute = `grid-template-rows: repeat(${width}, 1fr)`;
-
-    for (let i=0 ; i<length*width ; i++) {
+    for (let i=0 ; i< length**2 ; i++) {
 
         let div = document.createElement('div');
         div.classList.add('cell');
@@ -48,7 +50,6 @@ function resetBGcolor () {
 function newGrid() { //works as intended for the moment.
 
 let gridWidth;
-let gridLength;
 
     while (!(Number.isFinite(gridWidth) &&  gridWidth <= 100 && gridWidth > 0)) {
 
@@ -59,18 +60,6 @@ let gridLength;
             alert("There was something wrong with your entry.");
         }
     }
-
-    while (!(Number.isFinite(gridLength) &&  gridLength <= 100 && gridLength > 0)) {
-
-        gridLength = prompt("Please enter a grid length between 1 to 100.", "10");
-        gridLength = Number(gridLength);
-
-        if (!(Number.isFinite(gridLength) &&  gridLength <= 100 && gridLength > 0)) {
-            alert("There was something wrong with your entry.");
-        }
-    }
-
-
 }
 
 function buttonFunction () {
@@ -79,5 +68,4 @@ function buttonFunction () {
 }
 //STATEMENTS GO HERE
 
-//createGrid();
-createGrid2();
+createGrid();
