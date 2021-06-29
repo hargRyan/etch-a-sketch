@@ -4,30 +4,21 @@
 }
 
 
-
-#container {
-
+#container, #button-container {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 #grid {
     display: grid;
     height: 600px;
     width: 600px;
-    
     border: 1px solid black;
-    
 }
 
 .cell {
     display: flex;
     flex-wrap: wrap;
     border: 1px solid black;
-}
-
-.cell:hover {
-    background-color: aqua;
 }
